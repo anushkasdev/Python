@@ -3,7 +3,7 @@ MAX_BET = 50
 MIN_BET = 1
 def getAmount(): 
   while True : 
-    amount = input("Please enter the amount for win : $")
+    amount = input("Please enter the amount for deposit : $")
     if amount.isdigit():
       amount = int(amount)
       if amount > 0:
@@ -22,7 +22,7 @@ def getLines():
       if 1 <=lines<= MAX_LINES:
         break
       else:
-        print("Please enter a valid number.")
+        print(f"Please enter the lines between 1 and ${MAX_LINES}.")
     else:
       print("Please enter a valid line from 1 to " + int(MAX_LINES)+ ".")
   return lines
@@ -35,7 +35,7 @@ def getBet():
       if MIN_BET<=bet<=MAX_BET:
         break
       else:
-        print(f"Please enter a valid bet in the range from .")
+        print(f"Please enter a valid bet in the range from {MIN_BET} and {MAX_BET}.")
     else:
       print("Please enter a valid amount only.")
   return bet
@@ -43,5 +43,9 @@ def getBet():
 def main():
   amount = getAmount()
   lines = getLines()
-  print(lines, amount)
+  bet = getBet()
+  total_bet = bet*lines
+  amount_left = amount - total_bet
+  print(f"You are betting ${bet} on {lines} lines, with a total bet amount of ${total_bet}")
+  print(f"Total amount left is : ${amount_left}")
 main()
