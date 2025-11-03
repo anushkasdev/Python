@@ -26,7 +26,7 @@ def getLines():
     else:
       print("Please enter a valid line from 1 to " + int(MAX_LINES)+ ".")
   return lines
-
+# for betting to different amounts
 def getBet(): 
   while True : 
     bet = input("Please enter the amount for Betting : $")
