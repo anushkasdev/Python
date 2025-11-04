@@ -1,6 +1,9 @@
 MAX_LINES = 4
 MAX_BET = 50
 MIN_BET = 1
+
+rows = 3
+cols = 3
 def getAmount(): 
   while True : 
     amount = input("Please enter the amount for deposit : $")
