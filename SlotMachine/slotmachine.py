@@ -11,6 +11,15 @@ symbol_count = {
   "C": 6,
   "D": 8
 }
+
+def get_slot_machine_spins(rows, cols, symbols):
+  all_symbols = []
+  for symbol, symbol_count in symbols.items():
+    for _ in range(symbol_count):
+      all_symbols.append(symbol)
+  
+  columns = [[0, 0], [0, 1], []]
+
 def getAmount(): 
   while True : 
     amount = input("Please enter the amount for deposit : $")
