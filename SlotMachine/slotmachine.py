@@ -1,6 +1,7 @@
 MAX_LINES = 4
 MAX_BET = 50
 MIN_BET = 1
+import random
 
 rows = 3
 cols = 3
@@ -18,7 +19,16 @@ def get_slot_machine_spins(rows, cols, symbols):
     for _ in range(symbol_count):
       all_symbols.append(symbol)
   
-  columns = [[0, 0], [0, 1], []]
+  columns = []
+  for col in range(cols):
+    column = []
+    current_symbols = all_symbols[:]
+    for _ in range(rows):
+      value = random.choice(all_symbols)
+      current_symbols.remove(value)
+      column.append(value)
+    columns.append(column)
+  return columns
 
 def getAmount(): 
   while True : 
