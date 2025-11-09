@@ -85,4 +85,6 @@ def main():
   amount_left = amount - total_bet
   print(f"You are betting ${bet} on {lines} lines, with a total bet amount of ${total_bet}")
   print(f"Total amount left is : ${amount_left}")
+  slots = get_slot_machine_spins(rows, cols, symbol_count)
+  print_slot_machine(slots)
 main()
