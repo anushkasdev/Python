@@ -20,7 +20,17 @@ symbol_value = {
   "D": 2
 }
 
-#def checkwinnings(columns, lines, bets):
+def checkwinnings(columns, lines, bets, values):
+  winnnings = 0
+  for line in range(lines):
+    symbol = columns[0][line]
+    for column in columns:
+      symbol_to_check = column[line]
+      if symbol != symbol_to_check:
+        break
+    else:
+      winnnings+= values[symbol] * bets
+    return winnnings
 
 
 def get_slot_machine_spins(rows, cols, symbols):
